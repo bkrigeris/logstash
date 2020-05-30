@@ -11,4 +11,4 @@ ADD logstash.yml /etc/logstash
 ADD logstash.conf /etc/logstash/conf.d
 
 EXPOSE 9600/tcp
-EXPOSE 5044/tcp
+EXPOSE 5044/udp
