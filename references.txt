@@ -1,3 +1,8 @@
 https://www.elastic.co/guide/en/logstash/current/installing-logstash.html
 https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf
 https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elastic-stack-on-ubuntu-18-04#step-3-%E2%80%94-installing-and-configuring-logstash
+https://stackify.com/docker-environment-variables/
+https://github.com/elastic/logstash/blob/7.7/Dockerfile
+https://medium.com/@d3rwan/an-elk-stack-from-scratch-with-docker-58551616a2da
+https://docs.bitnami.com/aws/apps/elk/get-started/understand-default-config/
+https://www.elastic.co/guide/en/logstash/current/monitoring-logstash.html
