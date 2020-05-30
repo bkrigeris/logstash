@@ -25,7 +25,7 @@
 # Which directory should be used by logstash and its plugins
 # for any persistent needs. Defaults to LOGSTASH_HOME/data
 #
-path.data: /var/lib/logstash
+# path.data: /var/lib/logstash
 #
 # ------------ Pipeline Settings --------------
 #
@@ -64,7 +64,7 @@ path.data: /var/lib/logstash
 # if there are multiple workers.
 # "false" will disable any extra processing necessary for preserving ordering.
 #
-pipeline.ordered: auto
+# pipeline.ordered: auto
 #
 # ------------ Pipeline Configuration Settings --------------
 #
@@ -199,7 +199,8 @@ pipeline.ordered: auto
 #
 # Bind address for the metrics REST endpoint
 #
-http.host: "127.0.0.1"
+# http.host: "127.0.0.1"
+http.host: "0.0.0.0"
 #
 # Bind port for the metrics REST endpoint, this option also accept a range
 # (9600-9700) and logstash will pick up the first available ports.
@@ -218,7 +219,7 @@ http.port: 9600
 #   * trace
 #
 # log.level: info
-path.logs: /var/log/logstash
+# path.logs: /var/log/logstash
 #
 # ------------ Other Settings --------------
 #
