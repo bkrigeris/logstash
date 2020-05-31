@@ -31,6 +31,7 @@ docker run --rm -d \
 logstash:latest logstash
 
 docker run --rm -d \
+--name logstash-server \
 -p 9600:9600/tcp -p 5000:5000/tcp -p 5000:5000/udp \
 -v ~/logstashlog:/usr/share/logstash/logstashlog/ \
 logstash:latest logstash
