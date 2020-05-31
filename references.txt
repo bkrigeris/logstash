@@ -6,6 +6,7 @@ https://github.com/elastic/logstash/blob/7.7/Dockerfile
 https://medium.com/@d3rwan/an-elk-stack-from-scratch-with-docker-58551616a2da
 https://docs.bitnami.com/aws/apps/elk/get-started/understand-default-config/
 https://www.elastic.co/guide/en/logstash/current/monitoring-logstash.html
+https://docs.docker.com/storage/bind-mounts/
 
 Test for health
 curl -XGET 'localhost:9600/?pretty'
@@ -15,3 +16,23 @@ docker run --rm -it -p 9600:9600 -v /Users/cpltest/Documents/njit/it610/project/
 
 test syslog message
 echo "message" | nc 127.0.0.1 5000
+
+docker run --rm -it -p 9600:9600 -p 5000:5000/tcp -p 5000:5000/udp -v /Users/cpltest/Documents/njit/it610/project/midterm/logstash_base/logstashlog:/usr/share/logstash/logstashlog/ logstash:base18 logstash
+
+docker run --rm -it \
+-p 9600:9600 -p 5000:5000/tcp -p 5000:5000/udp \
+-v /Users/cpltest/Documents/njit/it610/project/midterm/logstash_base/logstashlog:/usr/share/logstash/logstashlog/ \
+logstash:base18 logstash
+
+run headless
+docker run --rm -d \
+-p 9600:9600 -p 5000:5000/tcp -p 5000:5000/udp \
+-v /Users/cpltest/Documents/njit/it610/project/midterm/logstash_base/logstashlog:/usr/share/logstash/logstashlog/ \
+logstash:latest logstash
+
+docker run --rm -d \
+-p 9600:9600/tcp -p 5000:5000/tcp -p 5000:5000/udp \
+-v ~/logstashlog:/usr/share/logstash/logstashlog/ \
+logstash:latest logstash
+
+docker inspect imagename - to check on running image 
