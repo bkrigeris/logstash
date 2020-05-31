@@ -53,6 +53,10 @@ exposes ports on the host machine. tcp 9600 is used for monitoring, tcp/udp 5000
 -v flag mounts a directory on host machine to a directory on the docker container. Since container is destroyed after it is stopped, the logs will be saved directly to the host machine. More information on persistent volumes @ <https://docs.docker.com/storage/bind-mounts/> <pre><code>-v ~/logstashlog:/usr/share/logstash/logstashlog/ \ </code></pre> 
 specify the docker image and service to start <pre><code>logstash:latest logstash </code></pre> 
 
+## Stopping the container
+
+<pre><code>docker stop logstash-server</code></pre>
+
 ## Montoring health of logstash from host machine
 
 CURL command will output health of the logstash service<pre><code>curl -XGET 'localhost:9600/?pretty'</code></pre>
