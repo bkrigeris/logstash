@@ -36,7 +36,7 @@ README.md
 
 Clone the directory and change into the directory that contains all four files. Do not forget the period at the end of the command.
 
-<pre><code>docker build -t logstash:latest . </code></pre>
+<pre><code>docker build -t logstash:7.7.0 . </code></pre>
 
 ## Running the logging container
 
