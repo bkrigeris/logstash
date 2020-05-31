@@ -6,3 +6,6 @@ https://github.com/elastic/logstash/blob/7.7/Dockerfile
 https://medium.com/@d3rwan/an-elk-stack-from-scratch-with-docker-58551616a2da
 https://docs.bitnami.com/aws/apps/elk/get-started/understand-default-config/
 https://www.elastic.co/guide/en/logstash/current/monitoring-logstash.html
+
+Test for health
+curl -XGET 'localhost:9600/?pretty'
