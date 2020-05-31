@@ -21,11 +21,30 @@ Git installation can be found @ <https://www.atlassian.com/git/tutorials/install
 
 ### Components
 Dockerfile 
-: this is what docker engine is using to build the container image. It contains instructions for base image and addtional files that are added image container.
+:  this is what docker engine is using to build the container image. It contains instructions for base image and addtional files that are added image container. Complete reference can be found @ <https://docs.docker.com/engine/reference/builder/>
 
-## Usage
+logstash.yml
+:  a file that defines logstash configuration settings. Complete reference can be found @ <https://www.elastic.co/guide/en/logstash/current/index.html>
 
-TODO: Write usage instructions
+logstash.conf
+:  a file that defines logstash operational settings for input, filter and output configuration. Complete reference can be found @ <https://www.elastic.co/guide/en/logstash/current/index.html>
+
+README.md
+:  instructions on how to install and run this container
+
+### Creating a container image
+
+Clone the directory and change into the directory that contains all four files. Do not forget the period at the end of the command.
+
+<pre><code>docker build -t logstash:latest . </code></pre>
+
+## Running the logging container
+
+<pre><code>docker run --rm -d \
+--name logstash-server \
+-p 9600:9600/tcp -p 5000:5000/tcp -p 5000:5000/udp \
+-v ~/logstashlog:/usr/share/logstash/logstashlog/ \
+logstash:latest logstash </code></pre>
 
 ## Contributing
 
