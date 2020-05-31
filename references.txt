@@ -9,3 +9,9 @@ https://www.elastic.co/guide/en/logstash/current/monitoring-logstash.html
 
 Test for health
 curl -XGET 'localhost:9600/?pretty'
+curl -XGET 'localhost:9600/_node/hot_threads?human=true' 
+
+docker run --rm -it -p 9600:9600 -v /Users/cpltest/Documents/njit/it610/project/midterm/logstash_base/logstashlog:/usr/share/logstash/logstashlog/ logstash:base14 bash
+
+test syslog message
+echo "message" | nc 127.0.0.1 5000
