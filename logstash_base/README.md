@@ -44,14 +44,14 @@ Clone the directory and change into the directory that contains all four files. 
 --name logstash-server \
 -p 9600:9600/tcp -p 5000:5000/tcp -p 5000:5000/udp \
 -v ~/logstashlog:/usr/share/logstash/logstashlog/ \
-logstash:latest logstash </code></pre>
+logstash:7.7.0 logstash </code></pre>
 
 ### Breakdown of the docker run command
 -rm will delete the container after it is stopped and -d will run headless <pre><code>docker run --rm -d \ </code></pre> 
 --name names the container <pre><code>--name logstash-server \ </code></pre> 
 exposes ports on the host machine. tcp 9600 is used for monitoring, tcp/udp 5000 is used for receiving log messages <pre><code>-p 9600:9600/tcp -p 5000:5000/tcp -p 5000:5000/udp \ </code></pre> 
 -v flag mounts a directory on host machine to a directory on the docker container. Since container is destroyed after it is stopped, the logs will be saved directly to the host machine. More information on persistent volumes @ <https://docs.docker.com/storage/bind-mounts/> <pre><code>-v ~/logstashlog:/usr/share/logstash/logstashlog/ \ </code></pre> 
-specify the docker image and service to start <pre><code>logstash:latest logstash </code></pre> 
+specify the docker image and service to start <pre><code>logstash:7.7.0 logstash </code></pre> 
 
 ## Stopping the container
 
