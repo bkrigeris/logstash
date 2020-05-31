@@ -19,7 +19,9 @@ Git installation can be found @ <https://www.atlassian.com/git/tutorials/install
 
 ## Building Docker Container
 
-TODO: Describe the installation process
+### Components
+Dockerfile 
+: this is what docker engine is using to build the container image. It contains instructions for base image and addtional files that are added image container.
 
 ## Usage
 
