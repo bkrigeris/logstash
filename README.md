@@ -87,7 +87,7 @@ Output
 An easy way to test the container is to use Netcat to send a message to Logstash from the host machine. If doing from a remote device, subsitute localhost IP 127.0.0.1 with IP address of the host the container is running on.
 <pre><code>echo "message" | nc 127.0.0.1 5000</code></pre> 
 
-Logs will output to ~/logstashlog/logstash.out and the file will be created when the first message arrives. After that you can tail logstash.out for newly arrived messages
+Logs will output to ~/logstashlog/logstash.out and the file will be created when the first message arrives. After that you can tail -f logstash.out for newly arrived messages
 
 ## Notes
 While the log collector configuration is basic and primitive, addtional and complex features can be added by manipulating logstash.conf file. 
