@@ -1,12 +1,12 @@
 # Project Name: Lightweight Log Collector
 
-## Objective of ths project
+## Objective of this project
 
 This object of this project is to have a lightweight, easy to install and deploy syslog or any other type of log collector. The core installation behind this container is Logstash, a part of Elastic Stack. 
 
 ## Target audience for this project
 
-While this container is not designed for enterprise usage, it can be spun up quickly and easily to stand up a log collecor to help a network engineer or system administrator capture logs and send them to a remote system. This is especially helpful when troubleshooting Cisco IOS devices that don't retain logs on reboot or have a small syslog buffers.
+While this container is not designed for enterprise usage, it can be spun up quickly and easily to stand up a log collector to help a network engineer or system administrator capture logs and send them to a remote system. This is especially helpful when troubleshooting Cisco IOS devices that don't retain logs on reboot or have a small syslog buffers.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ Git installation can be found @ <https://www.atlassian.com/git/tutorials/install
 
 ### Components
 Dockerfile 
-:  this is what docker engine is using to build the container image. It contains instructions for base image and addtional files that are added image container. Complete reference can be found @ <https://docs.docker.com/engine/reference/builder/>
+:  this is what docker engine is using to build the container image. It contains instructions for base image and additional files that are added image container. Complete reference can be found @ <https://docs.docker.com/engine/reference/builder/>
 
 logstash.yml
 :  a file that defines logstash configuration settings. Complete reference can be found @ <https://www.elastic.co/guide/en/logstash/current/index.html>
@@ -57,7 +57,7 @@ specify the docker image and service to start <pre><code>logstash:7.7.0 logstash
 
 <pre><code>docker stop logstash-server</code></pre>
 
-## Montoring health of logstash from host machine
+## Monitoring health of logstash from host machine
 
 CURL command will output health of the logstash service<pre><code>curl -XGET 'localhost:9600/?pretty'</code></pre>
 
@@ -84,10 +84,10 @@ Output
 </code></pre>
 
 ## Testing the setup
-An easy way to test the container is to use Netcat to send a message to Logstash from the host machine. If doing from a remote device, subsitute localhost IP 127.0.0.1 with IP address of the host the container is running on.
+An easy way to test the container is to use Netcat to send a message to Logstash from the host machine. If doing from a remote device, substitute localhost IP 127.0.0.1 with IP address of the host the container is running on.
 <pre><code>echo "message" | nc 127.0.0.1 5000</code></pre> 
 
 Logs will output to ~/logstashlog/logstash.out and the file will be created when the first message arrives. After that you can tail -f logstash.out for newly arrived messages
 
 ## Notes
-While the log collector configuration is basic and primitive, addtional and complex features can be added by manipulating logstash.conf file. 
+While the log collector configuration is basic and primitive, additional and complex features can be added by manipulating logstash.conf file. 
